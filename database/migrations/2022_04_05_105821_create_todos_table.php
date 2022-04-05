@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->boolean('done')->default(false);
             $table->dateTime('ends_at')->nullable();
+            $table->integer('order');
             $table->foreignId('todo_id')->nullable();
             
             $table->foreign('todo_id')->references('id')->on('todos')->onDelete('cascade');
